@@ -1,0 +1,21 @@
+.navigation {
+  background-color: #552583;
+  color: #ffffff;
+  padding: 5px 0;
+
+  .nav-list {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+
+    li {
+      font-size: 30px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &:hover {
+        color: #fdba21;
+      }
+    }
+  }
+}
