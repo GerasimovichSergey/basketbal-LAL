@@ -8,10 +8,12 @@
     gap: 100px;
     justify-content: center;
 
-    li {
+    .nav-link {
       font-size: 30px;
       cursor: pointer;
       transition: all 0.2s;
+      color: #ffffff;
+      text-decoration: none;
 
       &:hover {
         color: #fdba21;

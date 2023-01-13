@@ -11,6 +11,6 @@ appRouter.setRoutes([
   },
   {
     path: 'main',
-    page: MainPage
+    page: MainPage,
   },
 ]);

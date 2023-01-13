@@ -24,7 +24,7 @@ module.exports = (argv, env) => {
     module: {
       rules: [
         {
-          test: /\.(png|jpg|gif|svg)$/,
+          test: /\.(png|jpg|gif|svg|webp)$/,
           type: 'asset/resource',
           generator: {
             filename: 'images/[hash][ext]'
