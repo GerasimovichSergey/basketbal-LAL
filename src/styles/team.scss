@@ -1,0 +1,28 @@
+.players-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 50px;
+  padding-top: 20px;
+  justify-content: center;
+
+  .player {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 250px;
+    height: 230px;
+    cursor: pointer;
+
+    &:hover {
+      outline: 2px solid #552583;
+    }
+
+    .player-img {
+      margin: 0 auto;
+      width: 200px;
+      height: 160px;
+    }
+  }
+}
+

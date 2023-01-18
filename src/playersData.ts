@@ -35,4 +35,4 @@ export const playersData = [
     number: 15,
     image: 'reaves.webp'
   },
-]
+];

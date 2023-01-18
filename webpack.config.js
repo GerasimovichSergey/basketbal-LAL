@@ -24,6 +24,10 @@ module.exports = (argv, env) => {
     module: {
       rules: [
         {
+          test: /\.html$/i,
+          use: 'html-loader'
+        },
+        {
           test: /\.(png|jpg|gif|svg|webp)$/,
           type: 'asset/resource',
           generator: {
