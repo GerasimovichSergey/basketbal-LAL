@@ -35,4 +35,16 @@ export const playersData = [
     number: 15,
     image: 'reaves.webp'
   },
+  {
+    firstName: 'Thomas',
+    lastName: 'Bryant',
+    number: 31,
+    image: 'bryant.webp'
+  },
+  {
+    firstName: 'Troy',
+    lastName: 'Brown Jr.',
+    number: 7,
+    image: 'brown.webp'
+  },
 ];
