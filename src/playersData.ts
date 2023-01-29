@@ -43,7 +43,7 @@ export const playersData = [
   },
   {
     firstName: 'Troy',
-    lastName: 'Brown Jr.',
+    lastName: 'Brown',
     number: 7,
     image: 'brown.webp'
   },

@@ -4,37 +4,49 @@ import { IMAGES } from './images';
 
 
 const teamPageTemplate = document.createElement('template');
-const playersCards = playersData.map((player, index) => {
-  const li = document.createElement('li');
+
+const playersCards = playersData.map((player) => {
+  const div = document.createElement('div');
   const img = document.createElement('img');
 
-  li.classList.add('player');
+  div.classList.add('player');
+  // a.setAttribute('is', 'router-link'); вложил карточку игрока в <a> и задал атрибут is="router-link". Перегружает страницу и ошибка
+  // a.href = `/player/${player.lastName.toLowerCase()}`;
+  div.dataset.player = player.lastName;
+
   img.classList.add('player-img');
   img.alt = `Photo ${player.firstName} ${player.lastName}`;
-  img.src = IMAGES.get(`img-${index}`);
-
-  li.innerHTML = `
-<!--    <img class="player-img" src="assets/images/${player.image}" alt="Photo ${player.firstName} ${player.lastName}">-->
+  img.src = IMAGES.get(`img-${player.lastName.toLowerCase()}`);
+  div.innerHTML = `
     <span class="player-first-name">${player.firstName}</span>
     <span class="player-last-name">${player.lastName}</span>
     <span class="player-number">#${player.number}</span>
+    <a is="router-link" href="/player/${player.lastName.toLowerCase()}">Player info</a>
   `;
+  div.prepend(img);
 
-  li.prepend(img);
-
-  return li;
+  return div;
 });
 
 teamPageTemplate.innerHTML = `
-    <ul class="players-list"></ul>
+    <div class="players-list"></div>
 `;
 
 export class TeamPage extends AbstractPage {
   render(): DocumentFragment {
     const fragment = teamPageTemplate.content.cloneNode(true) as DocumentFragment;
+    const playersList = fragment.querySelector('.players-list');
 
-    fragment.querySelector('.players-list')?.append(...playersCards);
-    fragment.querySelector('.main')?.append(teamPageTemplate);
+    playersList?.append(...playersCards);
+
+    // playersList?.addEventListener('click', (event) => {
+    //   const target = event.target as HTMLElement;
+    //   const playerCard = target.closest('a');
+    //
+    //   if (playerCard) {
+    //     console.log(playerCard.getAttribute('data-player'));
+    //   }
+    // })
 
     return fragment;
   }

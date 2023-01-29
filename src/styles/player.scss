@@ -1,0 +1,14 @@
+.selected-player {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 500px;
+  height: 600px;
+  gap: 10px;
+  font-size: 24px;
+
+  .player-img {
+    width: 400px;
+    height: 300px;
+  }
+}
