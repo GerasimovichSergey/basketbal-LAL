@@ -1,9 +1,9 @@
 import { ActivatedRoute } from './router';
-import { getPlayerData } from './getPlayerData';
+import { getPlayerDataAPI } from './getPlayerDataAPI';
 
 
 export async function playerResolver(activatedRoute: ActivatedRoute) {
-  const playerData = await getPlayerData(activatedRoute.params!.name);
+  const playerData = await getPlayerDataAPI(activatedRoute.params!.name);
   const player = playerData.response[0];
 
   return player;

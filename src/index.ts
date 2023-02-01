@@ -4,6 +4,7 @@ import './styles/navigation.scss';
 import './styles/main.scss';
 import './styles/team.scss';
 import './styles/player.scss';
+import './styles/viewed.scss';
 import { appRouter } from './appRouter';
 
 

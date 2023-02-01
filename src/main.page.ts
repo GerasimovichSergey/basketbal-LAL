@@ -1,4 +1,5 @@
 import { AbstractPage } from './router';
+import { getStorageData } from './getStorageData';
 
 
 const mainPageTemplate = document.createElement('template');
@@ -6,6 +7,10 @@ const mainPageTemplate = document.createElement('template');
 mainPageTemplate.innerHTML = `
   <p class="main-text">The Los Angeles Lakers are an American professional basketball team based in Los Angeles. The Lakers compete in the National Basketball Association (NBA) as a member of the league's Western Conference Pacific Division. The Lakers play their home games at Crypto.com Arena, an arena shared with the NBA's Los Angeles Clippers, the Los Angeles Sparks of the Women's National Basketball Association, and the Los Angeles Kings of the National Hockey League. The Lakers are one of the most successful teams in the history of the NBA, and have won 17 NBA championships, tied with the Boston Celtics for the most in NBA history.</p>
 `;
+
+if (getStorageData('viewedPlayers') === null) {
+  localStorage.setItem('viewedPlayers', JSON.stringify([]));
+}
 
 export class MainPage extends AbstractPage {
   render(): DocumentFragment {

@@ -2,7 +2,6 @@ import { AbstractPage } from './router';
 import { playersData } from './playersData';
 import { IMAGES } from './images';
 
-
 const teamPageTemplate = document.createElement('template');
 
 const playersCards = playersData.map((player) => {
@@ -38,15 +37,6 @@ export class TeamPage extends AbstractPage {
     const playersList = fragment.querySelector('.players-list');
 
     playersList?.append(...playersCards);
-
-    // playersList?.addEventListener('click', (event) => {
-    //   const target = event.target as HTMLElement;
-    //   const playerCard = target.closest('a');
-    //
-    //   if (playerCard) {
-    //     console.log(playerCard.getAttribute('data-player'));
-    //   }
-    // })
 
     return fragment;
   }

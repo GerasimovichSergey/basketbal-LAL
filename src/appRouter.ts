@@ -4,6 +4,7 @@ import { TeamPage } from './team.page';
 import { PlayerPage } from './player.page';
 import { SelectedPlayerPage } from './selectedPlayer.page';
 import { playerResolver } from './playerResolver';
+import { ViewedPage } from './viewed.page';
 
 
 export const appRouter = new Router();
@@ -31,5 +32,9 @@ appRouter.setRoutes([
     resolvers: {
       details: playerResolver,
     }
+  },
+  {
+    path: 'viewed',
+    page: ViewedPage,
   },
 ]);
